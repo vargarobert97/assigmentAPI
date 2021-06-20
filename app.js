@@ -1,16 +1,20 @@
 const express = require('express');
 
 const app = express();
+const mongoose = require('mongoose');
+require('dotenv/config');
 
 
+//Import routes
+const postsRoute = require('./routes/posts');
+app.use('/posts', postsRoute);
 
 
-app.get('/', (req, res) => {
-    res.send("We're on home");
-});
-
-app.get('/posts', (req, res) => {
-    res.send("We're on posts");
-});
+//Connection to DataBase
+mongoose.connect(
+    process.env.DB_CONNECTION, 
+    { useUnifiedTopology: true }, 
+    () => console.log('Conneted to DB')
+);
 
 app.listen(3000);
