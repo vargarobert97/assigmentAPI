@@ -6,14 +6,15 @@ require('dotenv/config');
 
 
 //Import routes
-const postsRoute = require('./routes/posts');
+const postsRoute = require('./routes/routes');
 app.use('/posts', postsRoute);
 
 
 //Connection to DataBase
 mongoose.connect(
-    process.env.DB_CONNECTION, 
-    { useUnifiedTopology: true }, 
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true, 
+      useUnifiedTopology: true },  
     () => console.log('Conneted to DB')
 );
 
