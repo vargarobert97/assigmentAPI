@@ -1,6 +1,8 @@
 const express = require('express');
 
 const router = express.Router();
+const categoryController = require('../controllers/categoryController')
+const shopController = require('../controllers/shopController')
 
 //Getting all
 //Getting one
@@ -35,9 +37,10 @@ router.post('/Category', (req, res) => {
 // **********Shop routes**********
 
 //Get all
-router.get('/Shop', (req, res) => {
-    res.send("")
-});
+// router.get('/Shop', (req, res) => {
+//     res.send("We're on shop")
+// });
+router.get("/Shops", shopController.get_all_shops);
 
 //Getting one
 router.get('/Shop/:id', (req, res) => {
@@ -45,8 +48,9 @@ router.get('/Shop/:id', (req, res) => {
 });
 
 //Creating one
-router.post('/Shop', (req, res) => {
-    res.send("")
-});
+// router.post('/Shop', (req, res) => {
+//     res.send("")
+// });
+router.post("/Shop", shopController.create_shop);
 
 module.exports = router;

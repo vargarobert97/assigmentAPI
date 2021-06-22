@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const itemsSchema = require("./Items").schema;
 
 const listSchema = new mongoose.Schema({
     name: {
@@ -19,7 +20,9 @@ const listSchema = new mongoose.Schema({
         itemsSchema
     ],
     Shop: {
-        //TODO: Pitaj na daily
+        type: Schema.Types.ObjectId,
+        ref: "Shop",
+        required: true,
     }
 });
 
