@@ -52,6 +52,22 @@ const get_single_category = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+/* 
+async function get_single_category(req, res, next){
+    let category;
+    try{
+        category = await Category.findById(req.params.id)
+        if(category == null) {
+            return res.status(404).json({ message: "Cannot find category"})
+        }
+    } catch (err) {
+        return res.status(500).json({ message: err.message})
+    }
+    res.category = category
+    next()
+}
+*/
+
 module.exports = {
   create_category,
   get_all_categories,
