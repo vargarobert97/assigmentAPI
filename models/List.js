@@ -1,15 +1,25 @@
 const mongoose = require('mongoose');
 
-const listSchema = mongoose.Schema({
+const listSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    Items: {
-
+    created: {
+        type: Date,
+        required: true,
+        default: Date.now
     },
+    updated: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    Items: [
+        itemsSchema
+    ],
     Shop: {
-        
+        //TODO: Pitaj na daily
     }
 });
 
