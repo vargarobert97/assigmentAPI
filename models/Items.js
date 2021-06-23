@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const itemsSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -11,7 +12,9 @@ const itemsSchema = new mongoose.Schema({
         default: Date.now
     },
     category: {
-
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+        required: true,
     },
     quantity: {
         type: Number,

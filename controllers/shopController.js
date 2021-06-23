@@ -13,6 +13,7 @@ const create_shop = (req, res) => {
       res.json("Shop created");
     })
     .catch((err) => console.log(err));
+  //res.json(req.body);
 };
 
 const get_all_shops = (req, res) => {
