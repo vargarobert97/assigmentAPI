@@ -1,4 +1,4 @@
-//require('dotenv/config');
+require('dotenv/config');
 const express = require('express');
 
 const app = express();
@@ -22,10 +22,12 @@ app.use('/routes', postsRoute);
 // );
 
 mongoose.connect(
-    "mongodb+srv://vargarobert97:Rukometasi023@cluster0.ytlpa.mongodb.net/shopAPI?retryWrites=true&w=majority",
+    process.env.DataBase_CONNECTION,
     { useNewUrlParser: true,
       useUnifiedTopology: true},
     ()=> console.log("Conneted to DB"))
  
+
+    
 
 app.listen(3000);
