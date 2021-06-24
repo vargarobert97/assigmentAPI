@@ -18,10 +18,10 @@ const listSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
-    Items: [
+    items: [
         itemsSchema
     ],
-    Shop: {
+    shop: {
         type: Schema.Types.ObjectId,
         ref: "Shop",
         required: true,
