@@ -17,13 +17,13 @@ const listsController = require('../controllers/listController');
 router.post("/lists", listsController.create_list);
 
 //Getting one
-router.get("/lists", listsController.get_single_list);
+router.get("/lists/:id/", listsController.get_single_list);
 
 //Getting all
 router.get("/lists", listsController.get_all_lists);
 
 //Updating one
-router.put("/lists", listsController.update_list);
+router.put("/lists/:id/", listsController.update_list);
 
 //Deleting the list
 router.delete("/lists", listsController.delete_list);
