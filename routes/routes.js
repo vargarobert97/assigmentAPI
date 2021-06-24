@@ -26,7 +26,22 @@ router.get("/lists", listsController.get_all_lists);
 router.put("/lists/:id/", listsController.update_list);
 
 //Deleting the list
-router.delete("/lists", listsController.delete_list);
+router.delete("/lists/:id/", listsController.delete_list);
+
+//Creating list item
+router.post("/lists/:id/items", listsController.create_specific_list_item);
+
+//Getting list items
+router.get("/lists/:id/items", listsController.get_items_from_specific_list);
+
+//Getting list item
+router.get("/lists/listId/items/:itemId", listsController.get_specific_item_from_list);
+
+//Updating list item
+router.put("/lists/:listId/items/:itemId", listsController.update_list_item);
+
+//Deleting list item
+router.delete("/lists/:listId/items/:itemId", listsController.delete_list_item);
 
 
 
