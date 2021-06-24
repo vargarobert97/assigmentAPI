@@ -28,6 +28,5 @@ mongoose.connect(
     ()=> console.log("Conneted to DB"))
  
 
-    
 
 app.listen(3000);
