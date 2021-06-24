@@ -3,10 +3,11 @@ const List = require("../models/List");
 const create_list = (req, res) => {
 	const list = new List({
 		name: req.body.listName,
+		shop: req.body.listShop
 		//created:
 		//updated:
 		//Items: Item[]* ref: Item
-		//shop: req.body.listShop (ref: Shop)
+		
 });
 
 list.save().then((result) => {
@@ -32,7 +33,7 @@ const get_single_list = (req, res) => {
 
 };
 
-const update_specific_list = (req, res) => {
+const update_list = (req, res) => {
 	const id = req.params.id;
 	const name = req.body.listName;
 	const shop = req.body.listShop;
@@ -48,7 +49,7 @@ const update_specific_list = (req, res) => {
 	.catch((err) => console.log(err));
 };
 
-const delete_specific_list = (req, res) => {
+const delete_list = (req, res) => {
 	const id = req.params.id;
 	List.findByIdAndRemove(id).then(() => {
 	res.json("Specific list deleted");
@@ -130,8 +131,8 @@ module.exports = {
   create_list,
   get_all_lists,
   get_single_list,
-  update_specific_list,
-  delete_specific_list,
+  update_list,
+  delete_list,
   create_specific_list_item,
   get_items_from_specific_list,
   get_specific_item_from_specific_list,
