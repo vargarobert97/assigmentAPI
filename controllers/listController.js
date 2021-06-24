@@ -78,7 +78,7 @@ const get_items_from_specific_list = (req, res) => {
 	.catch((err) => console.log (err));
 };
 
-const get_specific_item_from_specific_list = (req, res) => {
+const get_specific_item_from_list = (req, res) => {
 	const listId = req.params.listId;
 	const itemId = req.params.itemId;
 
@@ -135,7 +135,7 @@ module.exports = {
   delete_list,
   create_specific_list_item,
   get_items_from_specific_list,
-  get_specific_item_from_specific_list,
+  get_specific_item_from_list,
   update_list_item,
   delete_list_item,
 };
