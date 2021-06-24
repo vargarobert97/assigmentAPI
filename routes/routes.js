@@ -12,62 +12,48 @@ const listsController = require('../controllers/listController');
 //Deleting one
 
 // **********List routes**********
-//Get all
+
+//Creating list
+router.post("/lists", listsController.create_list);
+
+//Getting one
+router.get("/lists", listsController.get_single_list);
+
+//Getting all
 router.get("/lists", listsController.get_all_lists);
-// router.get('/', (req, res) => {
-//     res.send("Hello World!")
-// });
+
+//Updating one
+router.put("/lists", listsController.update_list);
+
+//Deleting the list
+router.delete("/lists", listsController.delete_list);
+
 
 
 // **********Category routes**********
 
 //Get all
-router.get("/Category", categoryController.get_all_categories);
-
-// router.get('/Category', (req, res) => {
-//     res.send("We're on category")
-// });
-
+router.get("/category", categoryController.get_all_categories);
 
 //Getting one
-router.get("/Category/:id", categoryController.get_single_category);
-
-// router.get('/Category/:id', (req, res) => {
-//     res.send(req.params.id)
-// });
+router.get("/category/:id", categoryController.get_single_category);
 
 //Creating one
-router.post("/Category", categoryController.create_category);
-
-// router.post('/Category', (req, res) => {
-//     res.send("")
-// });
+router.post("/category", categoryController.create_category);
 
 
 
 // **********Shop routes**********
 
 //Get all
-router.get("/Shops", shopController.get_all_shops);
-
-// router.get('/Shop', (req, res) => {
-//     res.send("We're on shop")
-// });
-
+router.get("/shops", shopController.get_all_shops);
 
 //Getting one
-router.get("/Shop/:id", shopController.get_single_shop);
-
-// router.get('/Shop/:id', (req, res) => {
-//     res.send(req.params.id)
-// });
+router.get("/shop/:id", shopController.get_single_shop);
 
 //Creating one
-router.post("/Shop", shopController.create_shop);
+router.post("/shop", shopController.create_shop);
 
-// router.post('/Shop', (req, res) => {
-//     res.send("")
-// });
 
 
 module.exports = router;
