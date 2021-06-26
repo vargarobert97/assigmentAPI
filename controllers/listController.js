@@ -3,11 +3,7 @@ const List = require("../models/List");
 const create_list = (req, res) => {
 	const list = new List({
 		name: req.body.listName,
-		shop: req.body.listShop
-		//created:
-		//updated:
-		//Items: Item[]* ref: Item
-		
+		shop: req.body.listShop	
 });
 
 list.save().then((result) => {
@@ -26,7 +22,7 @@ const get_all_lists = (req, res) => {
 
 const get_single_list = (req, res) => {
 	const id = req.params.id;
-	List.findById(id).then((list) => {
+	List.findById(id).populate("shop").then((list) => {
 	res.json(list);
 })
 	.catch((err) => console.log(err));
@@ -59,7 +55,7 @@ const delete_list = (req, res) => {
 
 const create_specific_list_item = (req, res) => {
 	const id = req.params.id;
-	const item = req.params.body;
+	const item = req.body;
 
 	List.findById(id).then((list) => {
 	list.items.push(item);
@@ -72,6 +68,8 @@ const create_specific_list_item = (req, res) => {
 };
 
 const get_items_from_specific_list = (req, res) => {
+	const id = req.params.id;
+	
 	List.findById(id).populate("items.category").then((list) => {
 	res.json(list.items);
 })
