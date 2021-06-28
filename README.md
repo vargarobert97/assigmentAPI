@@ -4,18 +4,21 @@ Shop API created using Node.js, Express.js and Mongoose.
 
 ## Running the App
 
-Installing dependencies
+- Installing dependencies
 
-- $ npm install
-  Start the server
-- $ npm start
+* $ npm install
+
+- Start the server
+
+* $ npm start
 
 ## Docker
 
 Starting the Application with Docker Containers
 
 - Building an image:
-  $ docker build -t image-name .
+  $ docker build -t image-name.
+
 - Running a container
   $ docker run -p port:port -it --rm --name container-name image-name
 - Stopping a container
