@@ -24,6 +24,6 @@ Starting the Application with Docker Containers
 - Stopping a container
   $ docker stop container-name
 
-  ## Postman
+## Postman
 
-  -- Test the application with Postman using the routes provided in the "routes.js" file
+- Test the application with Postman using the routes provided in the "routes.js" file
