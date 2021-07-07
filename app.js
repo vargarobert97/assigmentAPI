@@ -14,19 +14,24 @@ app.use('/routes', postsRoute);
 
 
 //Connection to DataBase
-// mongoose.connect(
-//     process.env.DB_CONNECTION,
-//     { useNewUrlParser: true, 
-//       useUnifiedTopology: true },  
-//     () => console.log('Conneted to DB')
-// );
+// mongoose
+//  .connect(process.env.DataBase_CONNECTION, {
+//  useNewUrlParser: true,
+//  useUnifiedTopology: true,
+//  })
+//  .then((result) => {
+//   (app.listen(5000), () => {
+//     () => console.log("Conneted to DB");
+//   });
+//  });
 
 mongoose.connect(
     process.env.DataBase_CONNECTION,
     { useNewUrlParser: true,
       useUnifiedTopology: true},
     ()=> console.log("Conneted to DB"))
+
  
 
 
-app.listen(3000);
+app.listen(5000);
