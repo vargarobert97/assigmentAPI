@@ -1,9 +1,22 @@
 import React from 'react';
 
-const AssigmentList = () => {
+import Item from './Item';
+
+const AssigmentList = ({shops, setShops}) => {
+
     return (
     <div className="todo-container">
-      <ul className="todo-list"></ul>
+      <ul className="todo-list">
+        {shops.map(shop =>(
+          <Item 
+            key={shop.id}
+            shop={shop} 
+            text={shop.text} 
+            //id={shop.id} 
+            shops={shops} 
+            setShops={setShops} />
+        ))}
+      </ul>
     </div>
     );
 }
