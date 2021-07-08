@@ -1,8 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+//import axios from 'axios';
+
+//Shop Components
+import GetAllShops from './components/shops/GetAllShops';
+import GetSingleShop from './components/shops/GetSingleShop';
+import CreateShop from './components/shops/CreateShop';
+
+//Category Components
+import CreateCategory from './components/categories/CreateCategory';
+import GetSingleCategory from './components/categories/GetSingleCategory';
+import GetAllCategories from './components/categories/GetAllCategories';
+
+//List Components
+import CreateList from './components/lists/CreateList';
+import EditList from './components/lists/EditList';
+import GetAllLists from './components/lists/GetAllLists';
+import GetSingleList from './components/lists/GetSingleList';
 
 import Form from './components/Form';
-import AssigmentList from './components/AssigmentList';
+import FormList from './components/FormList';
 
 function App() {
   const [inputText, setInputText] = useState(""); //Input text for the form
@@ -11,6 +28,23 @@ function App() {
   //const [categories, setCategories] = useState([]);
   const [status, setStatus] = useState('');
   const [loaded, setLoaded] = useState([]);
+
+
+  // componentDidMount = () => {
+  //   this.getShops();
+  // }
+
+  // getShops = () => {
+  //   axios.get('/shops')
+  //   .then((response) => {
+  //     const data = response.data;
+  //     this.setState({posts: data});
+  //     console.log('Data recieved');
+  //   })
+  //   .catch(() => {
+  //     console.log('Data unsucesfull');
+  //   })
+  // }
 
   // useEffect(() => {
   //   console.log('hey');
@@ -43,9 +77,20 @@ function App() {
         setInputText={setInputText}
         setStatus={setStatus}
         />
-      <AssigmentList shops={shops} setShops={setShops} />
+      <FormList shops={shops} setShops={setShops} 
+      />
+     <GetAllShops />
     </div>
   );
 }
 
 export default App;
+
+
+// {
+//   "_id": "60d4db837e2fa03db89a20a2",
+//   "name": "Lidl",
+//   "address": "Novosadska",
+//   "city": "Zrenjanin",
+//   "__v": 0
+// }
