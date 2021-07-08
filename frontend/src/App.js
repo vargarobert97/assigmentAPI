@@ -1,6 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 //import axios from 'axios';
+
+import Navbar from './UI/Navbar';
+
+import Lists from './UI/Lists';
+import Shops from './UI/Shops';
+import Categories from './UI/Categories';
+
 
 //Shop Components
 import GetAllShops from './components/shops/GetAllShops';
@@ -66,6 +75,24 @@ function App() {
   // }
 
   return (
+
+    // <Router>
+    //   <div className="container">
+		// 		<Navbar />
+		// 		<br />
+		// 		<Route path="/lists" exact component={Lists} />
+		// 		<Route path="/shops" exact component={Shops} />
+		// 		<Route path="/categories" exact component={Categories} />
+		// 		<header>
+		// 			<h1>Shopping plan</h1>
+		// 		</header>
+		// 		{/* <Route path="/" exact component={CreateListForm} /> */}
+		// 	</div>
+    // </Router>
+
+
+
+
     <div className="App">
       <header>
         <h1>Robert Assigment</h1>
