@@ -28,7 +28,7 @@ app.use('/routes', postsRoute);
 //  });
 
 mongoose.connect(
-    process.env.DataBase_CONNECTION,
+    process.env.DataBase_CONNECTION_local,
     { useNewUrlParser: true,
       useUnifiedTopology: true},
     ()=> console.log("Conneted to DB"))
@@ -36,4 +36,4 @@ mongoose.connect(
  
 
 
-app.listen(27010);
+app.listen(3001);
