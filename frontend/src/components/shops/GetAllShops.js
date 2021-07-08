@@ -5,7 +5,7 @@ const GetAllShops = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() =>{
-        axios.get('http://localhost:27010/routes/shops').then(res => {
+        axios.get('http://localhost:3001/routes/shops').then(res => {
             console.log(res);
             setPosts(res.data)
         })
