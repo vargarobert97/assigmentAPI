@@ -15,7 +15,7 @@ const GetAllCategories = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [categories]);
 
   return (
     <div>
