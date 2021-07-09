@@ -55,7 +55,7 @@ const CreateShop = () => {
           <input
             className="todo-input"
             placeholder="Shop Address"
-            ref={shopCityRef}
+            ref={shopAddressRef}
           />
         </div>
 
@@ -63,7 +63,7 @@ const CreateShop = () => {
           <input
             className="todo-input"
             placeholder="Shop City"
-            ref={shopAddressRef}
+            ref={shopCityRef}
           />
         </div>
 
