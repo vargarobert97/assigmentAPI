@@ -54,7 +54,7 @@ const CreateShop = () => {
         <div className="my-4">
           <input
             className="todo-input"
-            placeholder="Shop city"
+            placeholder="Shop Address"
             ref={shopCityRef}
           />
         </div>
@@ -62,7 +62,7 @@ const CreateShop = () => {
         <div className="my-4">
           <input
             className="todo-input"
-            placeholder="Shop Address"
+            placeholder="Shop City"
             ref={shopAddressRef}
           />
         </div>
