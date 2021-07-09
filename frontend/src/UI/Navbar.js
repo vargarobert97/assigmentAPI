@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         
         <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <NavLink to="/" className="navbar-brand">Shop API</NavLink>
+        <NavLink to="/" className="navbar-brand">RobertShop API </NavLink>
         <div className="navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
