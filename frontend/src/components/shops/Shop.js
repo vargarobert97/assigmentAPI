@@ -7,8 +7,8 @@ const Shop = (props) => {
   return (
     <tr>
       <td>{props.shop.name}</td>
-      <td> {props.shop.city}</td>
       <td>{props.shop.address}</td>
+      <td>{props.shop.city}</td>
     </tr>
   );
 };
