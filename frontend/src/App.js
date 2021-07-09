@@ -82,7 +82,7 @@ function App() {
           <Route path="/lists" exact component={Lists} />
           <Route path="/shops" exact component={CreateShop} />
           <Route path="/categories" exact component={CreateCategory} />
-          <header></header>
+
           {/* <Route path="/" exact component={CreateListForm} /> */}
         </div>
       </Router>
