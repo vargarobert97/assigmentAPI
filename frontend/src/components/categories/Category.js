@@ -6,8 +6,8 @@ const Category = (props) => {
 
   return (
     <tr>
-      <td>{props.category.categoryName}</td>
-      <td> {props.category.categoryDescription}</td>
+      <td>{props.category.name}</td>
+      <td> {props.category.description}</td>
     </tr>
   );
 };
