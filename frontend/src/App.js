@@ -87,7 +87,7 @@ function App() {
         </div>
       </Router>
 
-      <FormList shops={shops} setShops={setShops} />
+      {/* <FormList shops={shops} setShops={setShops} /> */}
     </div>
   );
 }
