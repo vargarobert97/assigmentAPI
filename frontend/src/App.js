@@ -32,6 +32,7 @@ import FormList from "./components/FormList";
 function App() {
   const [inputText, setInputText] = useState(""); //Input text for the form
   const [shops, setShops] = useState([]); //Items in the form (ovde treba da stavis shop, category i items)
+  const [categories, setCategories] = useState([]);
   //const [lists, setLists] = useState([]);
   //const [categories, setCategories] = useState([]);
   const [status, setStatus] = useState("");
@@ -92,11 +93,3 @@ function App() {
 }
 
 export default App;
-
-// {
-//   "_id": "60d4db837e2fa03db89a20a2",
-//   "name": "Lidl",
-//   "address": "Novosadska",
-//   "city": "Zrenjanin",
-//   "__v": 0
-// }
