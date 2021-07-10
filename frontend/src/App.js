@@ -28,6 +28,7 @@ import GetSingleList from "./components/lists/GetSingleList";
 
 import Form from "./components/Form";
 import FormList from "./components/FormList";
+import CreateNewItem from "./components/items/CreateNewItem";
 
 function App() {
   const [inputText, setInputText] = useState(""); //Input text for the form
@@ -79,9 +80,10 @@ function App() {
         <div className="container">
           <Navbar />
           <br />
-          <Route path="/lists" exact component={Lists} />
+          <Route path="/lists" exact component={CreateList} />
           <Route path="/shops" exact component={CreateShop} />
           <Route path="/categories" exact component={CreateCategory} />
+          <Route path="/lists/:id/items" exact component={CreateNewItem} />
 
           {/* <Route path="/" exact component={CreateListForm} /> */}
         </div>
