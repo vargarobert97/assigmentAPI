@@ -36,8 +36,41 @@ const CreateList = () => {
       });
   };
 
+  const filterContent = (posts, searchTerm) => {
+    const result = posts.filter(
+      (post) =>
+        post.shop.toLowerCase().includes(searchTerm) ||
+        post.description.toLowerCase().includes(searchTerm)
+    );
+    this.setState({ posts: result });
+  };
+
+  const handleTextSearch = (event) => {
+    const searchTerm = event.currentTarget.value;
+    axios.get("/lists").then((res) => {
+      if (res.data.success) {
+        this.filterContent(res.data.posts, searchTerm);
+      }
+    });
+  };
+
   return (
     <div>
+      <div ClassName="row">
+        <div className="col-lg-9 mt-2 mb-2">
+          <h4>All Posts</h4>
+        </div>
+        <div classname="col-lg-3 mt-2 mb-2">
+          <input
+            className="form-control"
+            type="search"
+            placeholder="Search"
+            name="Searchterm"
+            onChange={handleTextSearch}
+          />
+        </div>
+      </div>
+
       <form onSubmit={submitHandler}>
         <div className="my-4">
           <input

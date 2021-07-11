@@ -17,6 +17,14 @@ const GetAllLists = () => {
       });
   }, []);
 
+  // const deleteList = async () => {
+  //   try {
+  //     await api.delete(`/lists/${props.list._id}`);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   return (
     <div>
       <table className="table table-dark">
@@ -25,6 +33,7 @@ const GetAllLists = () => {
             <th scope="col">List Name</th>
             <th scope="col">List Shop</th>
             <th scope="col">List Item</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +43,9 @@ const GetAllLists = () => {
               <List key={list._id} list={list} />
             ))
           }
+          {/* <button onClick={deleteList} type="button" class="btn btn-danger">
+            <i class="far fa-trash-alt"></i>
+          </button> */}
         </tbody>
       </table>
     </div>

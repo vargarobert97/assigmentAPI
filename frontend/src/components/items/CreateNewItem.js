@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Item from "../Item";
 // import GetAllItems from "./GetAllItems";
 
 const CreateNewItem = () => {
+  const [items, setItems] = useState([]);
+
   const itemNameRef = useRef("");
   const categoryRef = useRef("");
   const quantityRef = useRef("");
@@ -18,7 +21,7 @@ const CreateNewItem = () => {
   //     fetch("http://localhost:5500/routes/category")
   //       .then((response) => response.json())
   //       .then((result) => {
-  //         setCategories(result);
+  //         setItems(result);
   //         setIsLoading(false);
   //       })
   //       .catch((err) => {
@@ -39,6 +42,7 @@ const CreateNewItem = () => {
       .post(`http://localhost:5500/routes/lists/${id}/items`, item)
       .then((res) => {
         console.log(res);
+        setItems(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -77,6 +81,43 @@ const CreateNewItem = () => {
           Add
         </button>
       </form>
+
+      <div>
+        <table className="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Item name</th>
+              <th scope="col">Item category</th>
+              <th scope="col">Item quantity</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <button type="button" className="btn btn-primary">
+                  <i className="far fa-eye"></i>
+                </button>
+                <button type="button" className="btn btn-success">
+                  <i className="fas fa-edit"></i>
+                </button>
+                <button type="button" className="btn btn-danger">
+                  <i className="far fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+            {
+              // posts.map(post => <li key={post._id}>{post.title}</li>)
+              items.map((item) => (
+                <Item key={item.id} list={item} />
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
 
       {/* <div className='mb-4'>
                     <label
