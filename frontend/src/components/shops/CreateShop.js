@@ -3,21 +3,9 @@ import axios from "axios";
 import GetAllShops from "./GetAllShops";
 
 const CreateShop = () => {
-  //   const [shops, setShops] = useState([]);
   const shopNameRef = useRef("");
   const shopCityRef = useRef("");
   const shopAddressRef = useRef("");
-
-  //   useEffect(() => {
-  //     axios
-  //       .post("http://localhost:5500/routes/shops")
-  //       .then((res) => {
-  //         console.log(res);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -42,8 +30,6 @@ const CreateShop = () => {
       <form onSubmit={submitHandler}>
         <div className="my-4">
           <input
-            //   value={inputText}
-            //   onChange={inputTextHandler}
             placeholder="Shop name"
             type="text"
             className="todo-input"
@@ -66,15 +52,6 @@ const CreateShop = () => {
             ref={shopCityRef}
           />
         </div>
-
-        {/* <div className="select">
-          <select name="todos" className="filter-todo">
-            <option value="">Select</option>
-            <option value="shops">Shops</option>
-            <option value="categories">Categories</option>
-            <option value="lists">Lists</option>
-          </select>
-        </div> */}
 
         <button className="my-4" type="submit">
           Add

@@ -3,20 +3,8 @@ import axios from "axios";
 import GetAllLists from "./GetAllLists";
 
 const CreateList = () => {
-  //const [posts, setPosts] = useState([]);
   const listNameRef = useRef("");
   const listShopRef = useRef("");
-  //const listItemRef = useRef("");
-
-  // useEffect(() =>{
-  //     axios.post('http://localhost:5500/routes/lists').then(res => {
-  //         console.log(res);
-  //         setPosts(res.data)
-  //     })
-  //     .catch(err => {
-  //         console.log(err);
-  //     })
-  // }, [])
 
   //Getting shops array for selectBox
   const [shops, setShops] = useState([]);
@@ -37,7 +25,6 @@ const CreateList = () => {
     const list = {
       listName: listNameRef.current.value,
       listShop: listShopRef.current.value,
-      //listItem: listItemRef.current.value,
     };
     console.log(list);
     axios
@@ -89,30 +76,12 @@ const CreateList = () => {
       <form onSubmit={submitHandler}>
         <div className="my-4">
           <input
-            //   value={inputText}
-            //   onChange={inputTextHandler}
             placeholder="List name"
             type="text"
             className="todo-input"
             ref={listNameRef}
           />
         </div>
-
-        {/* <div className="my-4">
-          <input
-            className="todo-input"
-            placeholder="List shop"
-            ref={listShopRef}
-          />
-        </div> */}
-
-        {/* <div className="my-4">
-          <input
-            className="todo-input"
-            placeholder="List item"
-            ref={listItemRef}
-          />
-        </div> */}
 
         <div className="select">
           <select ref={listShopRef} name="todos" className="filter-todo">

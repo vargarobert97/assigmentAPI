@@ -18,30 +18,7 @@ const Item = (props) => {
         <i className="far fa-trash-alt fa-xs"></i>
       </button>
     </li>
-
-    // <tr>
-    //   <td>{props.item.itemName}</td>
-    //   <td>{props.item.itemCategory}</td>
-    //   <td>{props.item.itemQuantity}</td>
-    // </tr>
   );
 };
-
-// const Item = ({text, shops, setShops, shop}) => {
-//     const deleteHandler = () => {
-//         setShops(shops.filter((element) => element.id !== shop.id));
-//     };
-//     return (
-//         <div className="todo">
-//             <li className="todo-item">{text}</li>
-//             {/* <button className="complete-btn">
-//                 <i className="fas fa-check"></i>
-//             </button> */}
-//             <button onClick={deleteHandler} className="trash-btn">
-//                 <i className="fas fa-trash"></i>
-//             </button>
-//         </div>
-//     );
-// }
 
 export default Item;

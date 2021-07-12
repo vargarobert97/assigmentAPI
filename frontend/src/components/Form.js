@@ -2,16 +2,11 @@ import React from "react";
 
 const Form = ({ setInputText, shops, setShops, inputText, setStatus }) => {
   const inputTextHandler = (event) => {
-    //console.log(event.target.value);
     setInputText(event.target.value);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // setShops([
-    //   ...shops, {text: inputText, completed: false, id: Math.random() * 1000} //Ovde ide schema od shop, category i item
-    // ]);
-    // setInputText('');
   };
 
   const statusHandler = (event) => {

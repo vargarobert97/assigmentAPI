@@ -28,12 +28,9 @@ const GetAllShops = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            // posts.map(post => <li key={post._id}>{post.title}</li>)
-            shops.map((shop) => (
-              <Shop key={shop._id} shop={shop} />
-            ))
-          }
+          {shops.map((shop) => (
+            <Shop key={shop._id} shop={shop} />
+          ))}
         </tbody>
       </table>
     </div>

@@ -17,14 +17,6 @@ const GetAllLists = () => {
       });
   }, []);
 
-  // const deleteList = async () => {
-  //   try {
-  //     await api.delete(`/lists/${props.list._id}`);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <div>
       <table className="table table-dark">
@@ -37,15 +29,9 @@ const GetAllLists = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            // posts.map(post => <li key={post._id}>{post.title}</li>)
-            lists.map((list) => (
-              <List key={list._id} list={list} />
-            ))
-          }
-          {/* <button onClick={deleteList} type="button" class="btn btn-danger">
-            <i class="far fa-trash-alt"></i>
-          </button> */}
+          {lists.map((list) => (
+            <List key={list._id} list={list} />
+          ))}
         </tbody>
       </table>
     </div>

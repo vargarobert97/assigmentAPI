@@ -34,45 +34,8 @@ function App() {
   const [inputText, setInputText] = useState(""); //Input text for the form
   const [shops, setShops] = useState([]); //Items in the form (ovde treba da stavis shop, category i items)
   const [categories, setCategories] = useState([]);
-  //const [lists, setLists] = useState([]);
-  //const [categories, setCategories] = useState([]);
   const [status, setStatus] = useState("");
   const [loaded, setLoaded] = useState([]);
-
-  // componentDidMount = () => {
-  //   this.getShops();
-  // }
-
-  // getShops = () => {
-  //   axios.get('/shops')
-  //   .then((response) => {
-  //     const data = response.data;
-  //     this.setState({posts: data});
-  //     console.log('Data recieved');
-  //   })
-  //   .catch(() => {
-  //     console.log('Data unsucesfull');
-  //   })
-  // }
-
-  // useEffect(() => {
-  //   console.log('hey');
-  // }, []);
-
-  //Ovo mi je lose
-  // const filterHandler = () => {
-  //   switch(status){
-  //     case 'loaded':
-  //       setLoaded(shops.filter(shop => shop.completed ===true))
-  //       break;
-  //     case 'not loaded':
-  //       setLoaded(shops.filter(shop => shop.completed ===false))
-  //       break;
-  //      default:
-  //        setLoaded(shops)
-  //        break;
-  //   }
-  // }
 
   return (
     <div className="App">
@@ -84,12 +47,8 @@ function App() {
           <Route path="/shops" exact component={CreateShop} />
           <Route path="/categories" exact component={CreateCategory} />
           <Route path="/lists/:id/items" exact component={CreateNewItem} />
-
-          {/* <Route path="/" exact component={CreateListForm} /> */}
         </div>
       </Router>
-
-      {/* <FormList shops={shops} setShops={setShops} /> */}
     </div>
   );
 }

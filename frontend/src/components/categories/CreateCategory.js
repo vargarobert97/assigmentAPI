@@ -3,22 +3,8 @@ import axios from "axios";
 import GetAllCategories from "./GetAllCategories";
 
 const CreateCategory = () => {
-  //   const [posts, setPosts] = useState([]);
-
   const categoryNameRef = useRef("");
   const categoryDescriptionRef = useRef("");
-
-  //   useEffect(() => {
-  //     axios
-  //       .post("http://localhost:27010/routes/category")
-  //       .then((res) => {
-  //         console.log(res);
-  //         setPosts(res.data);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -43,8 +29,6 @@ const CreateCategory = () => {
       <form onSubmit={submitHandler}>
         <div className="my-4">
           <input
-            //   value={inputText}
-            //   onChange={inputTextHandler}
             placeholder="Category name"
             type="text"
             className="todo-input"

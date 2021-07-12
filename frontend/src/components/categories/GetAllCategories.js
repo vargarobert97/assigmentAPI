@@ -27,12 +27,9 @@ const GetAllCategories = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            // posts.map(post => <li key={post._id}>{post.title}</li>)
-            categories.map((category) => (
-              <Category key={category._id} category={category} />
-            ))
-          }
+          {categories.map((category) => (
+            <Category key={category._id} category={category} />
+          ))}
         </tbody>
       </table>
     </div>
