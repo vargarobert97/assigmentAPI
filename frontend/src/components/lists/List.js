@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import Item from "../Item";
 
 const List = (props) => {
-  const [lists, setLists] = useState([]);
-
   const deleteList = () => {
     axios
       .delete(`http://localhost:5500/routes/lists/${props.list._id}`)

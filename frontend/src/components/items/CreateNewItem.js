@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Item from "../Item";
-// import GetAllItems from "./GetAllItems";
 
 const CreateNewItem = () => {
-  const [items, setItems] = useState([]);
+  const [, setItems] = useState([]);
 
   const itemNameRef = useRef("");
   const categoryRef = useRef("");
@@ -81,7 +79,6 @@ const CreateNewItem = () => {
           Add
         </button>
       </form>
-      {/* <GetAllItems /> */}
     </div>
   );
 };

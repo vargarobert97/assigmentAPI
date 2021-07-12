@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 const Item = (props) => {
-  const [items, setItems] = useState([]);
   const deleteItemHandler = () => {
     props.onDeleteItem(props.item._id);
   };

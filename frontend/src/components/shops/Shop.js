@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 const Shop = (props) => {
-  const [shops, setShops] = useState([]);
-
   return (
     <tr>
       <td>{props.shop.name}</td>
