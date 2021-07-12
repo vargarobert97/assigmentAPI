@@ -13,6 +13,20 @@ const CreateNewItem = () => {
 
   const { id } = useParams();
 
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5500/routes/category")
+      .then((res) => {
+        console.log(res);
+        setCategories(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   // useEffect(() => {
   //     getCategories();
   // }, []);
@@ -61,12 +75,14 @@ const CreateNewItem = () => {
           />
         </div>
 
-        <div className="my-4">
-          <input
-            className="todo-input"
-            placeholder="Item category"
-            ref={categoryRef}
-          />
+        <div className="select">
+          <select ref={categoryRef} name="todos" className="filter-todo">
+            {categories.map((category) => (
+              <option key={category._id} value={category._id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="my-4">
@@ -74,6 +90,7 @@ const CreateNewItem = () => {
             className="todo-input"
             placeholder="Item quantity"
             ref={quantityRef}
+            type="number"
           />
         </div>
 
@@ -82,7 +99,7 @@ const CreateNewItem = () => {
         </button>
       </form>
 
-      <div>
+      {/* <div>
         <table className="table table-dark">
           <thead>
             <tr>
@@ -117,7 +134,7 @@ const CreateNewItem = () => {
             }
           </tbody>
         </table>
-      </div>
+      </div> */}
 
       {/* <div className='mb-4'>
                     <label
