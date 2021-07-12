@@ -109,8 +109,7 @@ select {
 
 /* Custom Select */
 .select {
-  margin: 1rem;
-  position: relative;
+  position: absolute;
   overflow: hidden;
 }
 select {
