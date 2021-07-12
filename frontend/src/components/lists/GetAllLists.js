@@ -15,7 +15,7 @@ const GetAllLists = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [lists]);
+  }, []);
 
   return (
     <div>

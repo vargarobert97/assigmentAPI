@@ -18,7 +18,7 @@ const CreateList = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [shops]);
+  }, []);
 
   const submitHandler = (event) => {
     event.preventDefault();
