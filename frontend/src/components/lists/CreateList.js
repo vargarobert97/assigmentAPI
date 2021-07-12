@@ -53,17 +53,18 @@ const CreateList = () => {
   const filterContent = (posts, searchTerm) => {
     const result = posts.filter(
       (post) =>
+        post.name.toLowerCase().includes(searchTerm) ||
         post.shop.toLowerCase().includes(searchTerm) ||
-        post.description.toLowerCase().includes(searchTerm)
+        post.items.toLowerCase().includes(searchTerm)
     );
     this.setState({ posts: result });
   };
 
   const handleTextSearch = (event) => {
     const searchTerm = event.currentTarget.value;
-    axios.get("/lists").then((res) => {
+    axios.get("http://localhost:5500/routes/lists").then((res) => {
       if (res.data.success) {
-        this.filterContent(res.data.posts, searchTerm);
+        filterContent(res.data.posts, searchTerm);
       }
     });
   };
