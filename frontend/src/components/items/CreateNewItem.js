@@ -65,6 +65,8 @@ const CreateNewItem = () => {
             ))}
           </select>
         </div>
+        <br />
+        <br />
 
         <div className="my-4">
           <input
