@@ -15,7 +15,7 @@ const GetAllShops = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [shops]);
+  }, []);
 
   return (
     <div>
