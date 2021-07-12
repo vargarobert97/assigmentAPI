@@ -15,7 +15,7 @@ const Item = (props) => {
         type="button"
         className="btn btn-danger ml-4 py-0 px-2"
       >
-        <i class="far fa-trash-alt fa-xs"></i>
+        <i className="far fa-trash-alt fa-xs"></i>
       </button>
     </li>
 

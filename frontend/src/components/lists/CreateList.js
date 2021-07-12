@@ -70,11 +70,11 @@ const CreateList = () => {
 
   return (
     <div>
-      <div ClassName="row">
+      <div className="row">
         <div className="col-lg-9 mt-2 mb-2">
           <h4>All Posts</h4>
         </div>
-        <div classname="col-lg-3 mt-2 mb-2">
+        <div className="col-lg-3 mt-2 mb-2">
           <input
             className="form-control"
             type="search"
@@ -127,7 +127,7 @@ const CreateList = () => {
           Add
         </button>
       </form>
-      <GetAllLists />
+      <GetAllLists key={shops._id} />
     </div>
   );
 };
