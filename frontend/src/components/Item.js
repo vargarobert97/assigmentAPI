@@ -3,13 +3,27 @@ import axios from "axios";
 
 const Item = (props) => {
   const [items, setItems] = useState([]);
+  const deleteItemHandler = () => {
+    props.onDeleteItem(props.item._id);
+  };
 
   return (
-    <tr>
-      <td>{props.item.itemName}</td>
-      <td>{props.item.itemCategory}</td>
-      <td>{props.item.itemQuantity}</td>
-    </tr>
+    <li>
+      {props.item.name}
+      <button
+        onClick={deleteItemHandler}
+        type="button"
+        className="btn btn-danger ml-4 py-0 px-2"
+      >
+        <i class="far fa-trash-alt fa-xs"></i>
+      </button>
+    </li>
+
+    // <tr>
+    //   <td>{props.item.itemName}</td>
+    //   <td>{props.item.itemCategory}</td>
+    //   <td>{props.item.itemQuantity}</td>
+    // </tr>
   );
 };
 
