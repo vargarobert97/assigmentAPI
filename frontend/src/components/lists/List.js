@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import Item from "../Item";
+import Item from "../items/Item";
 
 const List = (props) => {
   const deleteList = () => {
