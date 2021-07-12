@@ -37,14 +37,14 @@ const List = (props) => {
       <td>
         <ul>
           {props.list.items.map((item) => (
-            <Item item={item} onDeleteItem={deleteItem} />
+            <Item item={item} onDeleteItem={deleteItem} key={item._id} />
           ))}
         </ul>
         <NavLink to={`/lists/${props.list._id}/items`}>Add new item</NavLink>
       </td>
       <td>
-        <button onClick={deleteList} type="button" class="btn btn-danger">
-          <i class="far fa-trash-alt"></i>
+        <button onClick={deleteList} type="button" className="btn btn-danger">
+          <i className="far fa-trash-alt"></i>
         </button>
       </td>
     </tr>
