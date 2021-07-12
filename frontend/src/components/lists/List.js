@@ -11,7 +11,9 @@ const List = (props) => {
       <td>{props.list.shop.name}</td>
       <td>
         {props.list.items.map((item) => (
-          <span>{item.name}</span>
+          <ul>
+            <li>{item.name}</li>
+          </ul>
         ))}
         <NavLink to={`/lists/${props.list._id}/items`}>Add new item</NavLink>
       </td>
