@@ -5,6 +5,7 @@ const create_list = (req, res) => {
     name: req.body.listName,
     shop: req.body.listShop,
   });
+  console.log(req.body);
 
   list
     .save()
