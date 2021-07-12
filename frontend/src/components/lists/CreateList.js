@@ -48,6 +48,7 @@ const CreateList = () => {
   };
 
   const handleTextSearch = (event) => {
+    console.log("Testing search");
     const searchTerm = event.currentTarget.value;
     axios.get("http://localhost:5500/routes/lists").then((res) => {
       if (res.data.success) {
@@ -92,10 +93,14 @@ const CreateList = () => {
             ))}
           </select>
         </div>
-
-        <button className="my-4" type="submit">
-          Add
-        </button>
+        <br />
+        <div>
+          <br />
+          <br />
+          <button className="my-4" type="submit">
+            Add
+          </button>
+        </div>
       </form>
       <GetAllLists key={shops._id} />
     </div>
