@@ -9,13 +9,13 @@ const GetAllShops = () => {
     axios
       .get("http://localhost:5500/routes/shops")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setShops(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [shops]);
 
   return (
     <div>

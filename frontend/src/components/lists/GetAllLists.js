@@ -9,13 +9,13 @@ const GetAllLists = () => {
     axios
       .get("http://localhost:5500/routes/lists")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setLists(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [lists]);
 
   return (
     <div>

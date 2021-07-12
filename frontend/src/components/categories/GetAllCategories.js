@@ -9,7 +9,7 @@ const GetAllCategories = () => {
     axios
       .get("http://localhost:5500/routes/category")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setCategories(res.data);
       })
       .catch((err) => {
