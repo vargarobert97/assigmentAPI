@@ -6,10 +6,10 @@ const CreateList = () => {
   //const [posts, setPosts] = useState([]);
   const listNameRef = useRef("");
   const listShopRef = useRef("");
-  const listItemRef = useRef("");
+  //const listItemRef = useRef("");
 
   // useEffect(() =>{
-  //     axios.post('http://localhost:27010/routes/lists').then(res => {
+  //     axios.post('http://localhost:5500/routes/lists').then(res => {
   //         console.log(res);
   //         setPosts(res.data)
   //     })
@@ -18,12 +18,26 @@ const CreateList = () => {
   //     })
   // }, [])
 
+  //Getting shops array for selectBox
+  const [shops, setShops] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:5500/routes/shops")
+      .then((res) => {
+        console.log(res);
+        setShops(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   const submitHandler = (event) => {
     event.preventDefault();
     const list = {
       listName: listNameRef.current.value,
       listShop: listShopRef.current.value,
-      listItem: listItemRef.current.value,
+      //listItem: listItemRef.current.value,
     };
     console.log(list);
     axios
@@ -83,30 +97,31 @@ const CreateList = () => {
           />
         </div>
 
-        <div className="my-4">
+        {/* <div className="my-4">
           <input
             className="todo-input"
             placeholder="List shop"
             ref={listShopRef}
           />
-        </div>
+        </div> */}
 
-        <div className="my-4">
+        {/* <div className="my-4">
           <input
             className="todo-input"
             placeholder="List item"
             ref={listItemRef}
           />
-        </div>
-
-        {/* <div className="select">
-          <select name="todos" className="filter-todo">
-            <option value="">Select</option>
-            <option value="shops">Shops</option>
-            <option value="categories">Categories</option>
-            <option value="lists">Lists</option>
-          </select>
         </div> */}
+
+        <div className="select">
+          <select ref={listShopRef} name="todos" className="filter-todo">
+            {shops.map((shop) => (
+              <option key={shop._id} value={shop._id}>
+                {shop.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <button className="my-4" type="submit">
           Add
