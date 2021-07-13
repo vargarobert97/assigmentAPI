@@ -44,6 +44,10 @@ const CreateNewItem = () => {
       });
   };
 
+  const handleRefresh = () => {
+    window.location.href = "http://localhost:3000/lists";
+  };
+
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -77,7 +81,7 @@ const CreateNewItem = () => {
           />
         </div>
 
-        <button className="my-4" type="submit">
+        <button onClick={handleRefresh} className="my-4" type="submit">
           Add
         </button>
       </form>
