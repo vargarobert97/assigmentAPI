@@ -20,6 +20,10 @@ const CreateList = () => {
       });
   }, []);
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
     const list = {
@@ -97,7 +101,7 @@ const CreateList = () => {
         <div>
           <br />
           <br />
-          <button className="my-4" type="submit">
+          <button onClick={handleRefresh} className="my-4" type="submit">
             Add
           </button>
         </div>

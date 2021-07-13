@@ -28,6 +28,10 @@ const List = (props) => {
       });
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <tr>
       <td>{props.list.name}</td>
@@ -41,7 +45,15 @@ const List = (props) => {
         <NavLink to={`/lists/${props.list._id}/items`}>Add new item</NavLink>
       </td>
       <td>
-        <button onClick={deleteList} type="button" className="btn btn-danger">
+        <button
+          // onClick={(deleteList, handleRefresh)}
+          onClick={(event) => {
+            deleteList(event);
+            handleRefresh();
+          }}
+          type="button"
+          className="btn btn-danger"
+        >
           <i className="far fa-trash-alt"></i>
         </button>
       </td>

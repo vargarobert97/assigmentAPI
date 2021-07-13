@@ -5,11 +5,18 @@ const Item = (props) => {
     props.onDeleteItem(props.item._id);
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <li>
       {props.item.name}
       <button
-        onClick={deleteItemHandler}
+        onClick={(event) => {
+          deleteItemHandler(event);
+          handleRefresh();
+        }}
         type="button"
         className="btn btn-danger ml-4 py-0 px-2"
       >

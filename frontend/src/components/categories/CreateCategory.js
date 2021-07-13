@@ -24,6 +24,10 @@ const CreateCategory = () => {
       });
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -43,7 +47,7 @@ const CreateCategory = () => {
             ref={categoryDescriptionRef}
           />
         </div>
-        <button className="my-4" type="submit">
+        <button onClick={handleRefresh} className="my-4" type="submit">
           Add
         </button>
       </form>
