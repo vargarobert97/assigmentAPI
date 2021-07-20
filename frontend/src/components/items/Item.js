@@ -6,7 +6,9 @@ const Item = (props) => {
   };
 
   const handleRefresh = () => {
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 500);
   };
 
   return (

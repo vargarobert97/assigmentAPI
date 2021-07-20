@@ -45,7 +45,9 @@ const CreateNewItem = () => {
   };
 
   const handleRefresh = () => {
-    window.location.href = "http://localhost:3000/lists";
+    setTimeout(function () {
+      window.location.href = "http://localhost:3000/lists";
+    }, 500);
   };
 
   return (

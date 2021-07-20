@@ -21,7 +21,9 @@ const CreateList = () => {
   }, []);
 
   const handleRefresh = () => {
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 500);
   };
 
   const submitHandler = (event) => {
