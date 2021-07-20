@@ -15,7 +15,10 @@ const CreateCategory = () => {
 
     console.log(category);
     axios
-      .post("http://localhost:5500/routes/category", category)
+      .post(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/categories",
+        category
+      )
       .then((res) => {
         console.log(res);
       })
@@ -25,7 +28,9 @@ const CreateCategory = () => {
   };
 
   const handleRefresh = () => {
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 500);
   };
 
   return (
