@@ -7,7 +7,9 @@ const GetAllCategories = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5500/routes/category")
+      .get(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/categories"
+      )
       .then((res) => {
         //console.log(res);
         setCategories(res.data);

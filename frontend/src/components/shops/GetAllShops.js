@@ -7,7 +7,9 @@ const GetAllShops = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5500/routes/shops")
+      .get(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/shops"
+      )
       .then((res) => {
         //console.log(res);
         setShops(res.data);
