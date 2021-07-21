@@ -57,6 +57,7 @@ const CreateList = () => {
     console.log("Testing search");
     const searchTerm = event.currentTarget.value;
     axios.get("http://localhost:5500/routes/lists").then((res) => {
+      console.log(res.data);
       if (res.data.success) {
         filterContent(res.data.posts, searchTerm);
       }
