@@ -21,6 +21,7 @@ const CreateShop = () => {
         shop
       )
       .then((res) => {
+        window.location.reload();
         console.log(res);
       })
       .catch((err) => {
@@ -28,11 +29,11 @@ const CreateShop = () => {
       });
   };
 
-  const handleRefresh = () => {
-    setTimeout(function () {
-      window.location.reload();
-    }, 500);
-  };
+  // const handleRefresh = () => {
+  //   setTimeout(function () {
+  //     window.location.reload();
+  //   }, 500);
+  // };
 
   return (
     <div>
@@ -62,7 +63,7 @@ const CreateShop = () => {
           />
         </div>
 
-        <button onClick={handleRefresh} className="my-4" type="submit">
+        <button className="my-4" type="submit">
           Add
         </button>
       </form>
