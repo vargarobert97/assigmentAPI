@@ -7,7 +7,9 @@ const GetAllLists = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5500/routes/lists")
+      .get(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists"
+      )
       .then((res) => {
         //console.log(res);
         setLists(res.data);

@@ -6,9 +6,12 @@ import Item from "../items/Item";
 const List = (props) => {
   const deleteList = () => {
     axios
-      .delete(`http://localhost:5500/routes/lists/${props.list._id}`)
+      .delete(
+        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list._id}`
+      )
       .then((res) => {
         console.log(res);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -28,12 +31,6 @@ const List = (props) => {
       });
   };
 
-  const handleRefresh = () => {
-    setTimeout(function () {
-      window.location.reload();
-    }, 500);
-  };
-
   return (
     <tr>
       <td>{props.list.name}</td>
@@ -51,7 +48,6 @@ const List = (props) => {
           // onClick={(deleteList, handleRefresh)}
           onClick={(event) => {
             deleteList(event);
-            handleRefresh();
           }}
           type="button"
           className="btn btn-danger"

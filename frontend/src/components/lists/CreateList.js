@@ -10,7 +10,9 @@ const CreateList = () => {
   const [shops, setShops] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5500/routes/shops")
+      .get(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/shops"
+      )
       .then((res) => {
         //console.log(res);
         setShops(res.data);
@@ -20,23 +22,25 @@ const CreateList = () => {
       });
   }, []);
 
-  const handleRefresh = () => {
-    setTimeout(function () {
-      window.location.reload();
-    }, 500);
-  };
-
   const submitHandler = (event) => {
     event.preventDefault();
+    const listShop = shops.find(
+      (shop) => shop._id === listShopRef.current.value
+    );
+
     const list = {
       listName: listNameRef.current.value,
-      listShop: listShopRef.current.value,
+      listShop: listShop,
     };
     console.log(list);
     axios
-      .post("http://localhost:5500/routes/lists", list)
+      .post(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists",
+        list
+      )
       .then((res) => {
         console.log(res);
+        window.location.reload(); //TODO FIX THIS
       })
       .catch((err) => {
         console.log(err);
@@ -104,7 +108,7 @@ const CreateList = () => {
         <div>
           <br />
           <br />
-          <button onClick={handleRefresh} className="my-4" type="submit">
+          <button className="my-4" type="submit">
             Add
           </button>
         </div>
