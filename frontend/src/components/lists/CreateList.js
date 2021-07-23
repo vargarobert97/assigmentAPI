@@ -40,7 +40,7 @@ const CreateList = () => {
       )
       .then((res) => {
         console.log(res);
-        window.location.reload(); //TODO FIX THIS
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
