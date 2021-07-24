@@ -21,10 +21,11 @@ const List = (props) => {
   const deleteItem = (itemId) => {
     axios
       .delete(
-        `http://localhost:5500/routes/lists/${props.list._id}/items/${itemId}`
+        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list._id}/items/${itemId}`
       )
       .then((res) => {
         console.log(res);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +46,6 @@ const List = (props) => {
       </td>
       <td>
         <button
-          // onClick={(deleteList, handleRefresh)}
           onClick={(event) => {
             deleteList(event);
           }}
