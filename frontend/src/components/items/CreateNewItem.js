@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const CreateNewItem = () => {
+const CreateNewItem = (props) => {
   const [, setItems] = useState([]);
 
   const itemNameRef = useRef("");
@@ -15,7 +15,9 @@ const CreateNewItem = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5500/routes/category")
+      .get(
+        "https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/categories"
+      )
       .then((res) => {
         console.log(res);
         setCategories(res.data);
@@ -34,20 +36,19 @@ const CreateNewItem = () => {
     };
     console.log(item);
     axios
-      .post(`http://localhost:5500/routes/lists/${id}/items`, item)
+      .post(
+        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${id}/items`,
+        item
+      )
+      //`https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${listid}/items`
       .then((res) => {
         console.log(res);
         setItems(res.data);
+        window.location.href = "http://localhost:3000/lists";
       })
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  const handleRefresh = () => {
-    setTimeout(function () {
-      window.location.href = "http://localhost:3000/lists";
-    }, 500);
   };
 
   return (
@@ -83,7 +84,7 @@ const CreateNewItem = () => {
           />
         </div>
 
-        <button onClick={handleRefresh} className="my-4" type="submit">
+        <button className="my-4" type="submit">
           Add
         </button>
       </form>
