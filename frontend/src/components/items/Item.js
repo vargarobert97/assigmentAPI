@@ -2,13 +2,8 @@ import React from "react";
 
 const Item = (props) => {
   const deleteItemHandler = () => {
-    props.onDeleteItem(props.item._id);
-  };
-
-  const handleRefresh = () => {
-    setTimeout(function () {
-      window.location.reload();
-    }, 500);
+    props.onDeleteItem(props.item.id);
+    console.log(props.item.id);
   };
 
   return (
@@ -17,7 +12,6 @@ const Item = (props) => {
       <button
         onClick={(event) => {
           deleteItemHandler(event);
-          handleRefresh();
         }}
         type="button"
         className="btn btn-danger ml-4 py-0 px-2"
