@@ -38,7 +38,7 @@ const List = (props) => {
       <td>
         <ul>
           {props.list.items.map((item) => (
-            <Item item={item} onDeleteItem={deleteItem} key={item._id} />
+            <Item item={item} onDeleteItem={deleteItem} key={item.id} />
           ))}
         </ul>
         <NavLink to={`/lists/${props.list._id}/items`}>Add new item</NavLink>
