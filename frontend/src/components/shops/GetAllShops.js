@@ -31,7 +31,7 @@ const GetAllShops = () => {
         </thead>
         <tbody>
           {shops.map((shop) => (
-            <Shop key={shop._id} shop={shop} />
+            <Shop key={shop.id} shop={shop} />
           ))}
         </tbody>
       </table>

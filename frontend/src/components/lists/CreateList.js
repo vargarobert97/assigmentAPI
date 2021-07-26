@@ -25,7 +25,7 @@ const CreateList = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     const listShop = shops.find(
-      (shop) => shop._id === listShopRef.current.value
+      (shop) => shop.id === listShopRef.current.value
     );
 
     const list = {
@@ -98,7 +98,7 @@ const CreateList = () => {
         <div className="select">
           <select ref={listShopRef} name="todos" className="filter-todo">
             {shops.map((shop) => (
-              <option key={shop._id} value={shop._id}>
+              <option key={shop.id} value={shop.id}>
                 {shop.name}
               </option>
             ))}

@@ -7,7 +7,7 @@ const List = (props) => {
   const deleteList = () => {
     axios
       .delete(
-        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list._id}`
+        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list.id}`
       )
       .then((res) => {
         console.log(res);
@@ -21,7 +21,7 @@ const List = (props) => {
   const deleteItem = (itemId) => {
     axios
       .delete(
-        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list._id}/items/${itemId}`
+        `https://dj5x51i7ji.execute-api.us-east-2.amazonaws.com/Development/rvarga-third-assigment/lists/${props.list.id}/items/${itemId}`
       )
       .then((res) => {
         console.log(res);
@@ -42,7 +42,7 @@ const List = (props) => {
             <Item item={item} onDeleteItem={deleteItem} key={item.id} />
           ))}
         </ul>
-        <NavLink to={`/lists/${props.list._id}/items`}>Add new item</NavLink>
+        <NavLink to={`/lists/${props.list.id}/items`}>Add new item</NavLink>
       </td>
       <td>
         <button

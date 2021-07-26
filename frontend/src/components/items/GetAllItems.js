@@ -54,7 +54,7 @@ return (
       </thead>
       <tbody>
         {lists.map((list) => (
-          <List key={list._id} list={list} />
+          <List key={list.id} list={list} />
         ))}
       </tbody>
     </table>
