@@ -20,8 +20,6 @@ const GetAllLists = () => {
     axios
       .get(url)
       .then((res) => {
-        console.log(url);
-        //console.log(res);
         setLists(res.data);
       })
       .catch((err) => {

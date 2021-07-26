@@ -29,12 +29,6 @@ const CreateShop = () => {
       });
   };
 
-  // const handleRefresh = () => {
-  //   setTimeout(function () {
-  //     window.location.reload();
-  //   }, 500);
-  // };
-
   return (
     <div>
       <form onSubmit={submitHandler}>

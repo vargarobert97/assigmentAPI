@@ -47,7 +47,7 @@ const ShopFilter = (props) => {
               className="cursor-pointer underline px-4"
               onClick={clearFilter}
             >
-              Clear Filter
+              Clear
             </span>
           </div>
         )}
