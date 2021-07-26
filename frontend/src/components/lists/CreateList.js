@@ -47,42 +47,13 @@ const CreateList = () => {
       });
   };
 
-  const filterContent = (posts, searchTerm) => {
-    const result = posts.filter(
-      (post) =>
-        post.name.toLowerCase().includes(searchTerm) ||
-        post.shop.toLowerCase().includes(searchTerm) ||
-        post.items.toLowerCase().includes(searchTerm)
-    );
-    this.setState({ posts: result });
-  };
-
-  const handleTextSearch = (event) => {
-    console.log("Testing search");
-    const searchTerm = event.currentTarget.value;
-    axios.get("http://localhost:5500/routes/lists").then((res) => {
-      console.log(res.data);
-      if (res.data.success) {
-        filterContent(res.data.posts, searchTerm);
-      }
-    });
-  };
-
   return (
     <div>
       <div className="row">
         <div className="col-lg-9 mt-2 mb-2">
           <h4>All Posts</h4>
         </div>
-        <div className="col-lg-3 mt-2 mb-2">
-          <input
-            className="form-control"
-            type="search"
-            placeholder="Search"
-            name="Searchterm"
-            onChange={handleTextSearch}
-          />
-        </div>
+        <div className="col-lg-3 mt-2 mb-2"></div>
       </div>
 
       <form onSubmit={submitHandler}>
